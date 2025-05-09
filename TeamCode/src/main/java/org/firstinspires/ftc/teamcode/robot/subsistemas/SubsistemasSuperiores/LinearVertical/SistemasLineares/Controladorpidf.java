@@ -11,7 +11,7 @@ public class Controladorpidf {
     DcMotorEx motor;
     public Controladorpidf
     (
-        DcMotorEx Motor,
+        DcMotorEx motor,
         double P ,
         double I ,
         double D ,
@@ -25,18 +25,9 @@ public class Controladorpidf {
         this.d = D;
         this.f = F;
         controller = new PIDController(p, i, d);
-    //OU
-    /**/
-        //controller = new PIDController(P, I, D)
-    /**/
+
     }
-
-
     public double PIDF(){
-
-        //COMO FAZER ISSO SO RODAR UMA VEZ NO CODIGO?
-
-
         double kp = p;
         int linearpos = motor.getCurrentPosition();
 

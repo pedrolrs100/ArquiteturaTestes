@@ -41,6 +41,7 @@ import java.util.List;
 
 @TeleOp(name="Teleoperado V6 🔴🔴")
 @Config
+@Deprecated
 public class TeleoperadoV6Vermelho extends OpMode {
     List<Servo> servos = new ArrayList<>(4);
     private V5 robot;
@@ -367,7 +368,7 @@ public class TeleoperadoV6Vermelho extends OpMode {
     private void garraSuperior(BracoGarraSuperior bracoGarraSuperior,GarraSuperior garra, OrdersManager carteiro, GamepadEx gamepad){
         garra.monitor(telemetry);
         if (gamepad.getButton(GamepadKeys.Button.RIGHT_BUMPER)){
-            carteiro.addOrder(robot.outtakeIntakeSuperior.garraSuperior.gerenciadorDoFechamentoDaGarraNoTeleop(getRuntime(),bracoGarraSuperior.bracoGarraSuperiorState ),0.0,"garra superior",getRuntime());
+            //carteiro.addOrder(robot.outtakeIntakeSuperior.garraSuperior.gerenciadorDoFechamentoDaGarraNoTeleop(getRuntime(),bracoGarraSuperior.bracoGarraSuperiorState ),0.0,"garra superior",getRuntime());
 
         }
         if (gamepad.getButton(GamepadKeys.Button.LEFT_BUMPER)){

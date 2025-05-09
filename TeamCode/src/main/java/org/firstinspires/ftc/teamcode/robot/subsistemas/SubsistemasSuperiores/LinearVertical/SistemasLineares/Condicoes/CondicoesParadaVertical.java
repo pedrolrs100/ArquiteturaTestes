@@ -1,43 +1,48 @@
 package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes;
 
-import com.acmerobotics.roadrunner.ftc.Encoder;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
-public class CondicoesParadaVertical extends CondicoesGeral {
+public class CondicoesParadaVertical extends Condicoes {
 
-    private double correnteLimite;
+    public ElapsedTime time;
+    public double correnteLimite;
+    public int alturaMaxima;
 
-    public CondicoesParadaVertical(DcMotorEx motor){
-        super(motor);
+    public CondicoesParadaVertical(
+            DcMotorEx motor,
+            int alvo,
+            ElapsedTime time,
+            double correnteLimite,
+            int alturaMaxima
+    ){
+        super(motor,alvo,time);
+        this.correnteLimite = correnteLimite;
+        this.alturaMaxima = alturaMaxima;
     }
-    private int limiteCorrete(ElapsedTime time){
+    private boolean limiteCorrete(){
         boolean condicaoParadaSurtoEnergia = (motor.getCurrent(CurrentUnit.AMPS) >= correnteLimite);
 
         if(condicaoParadaSurtoEnergia && time.time() > 0.1 && motor.getCurrentPosition() < 230) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
-    private int limiteAltura(int target){
-        if(motor.getCurrentPosition() > 2000) return 1;
-        return 0;
-    }
-
-    private int condicaoParadaVertical(int target,ElapsedTime time){
-        return limiteCorrete(time)+limiteAltura(target);
-    }
-    public boolean CondicaoFinal(int target,ElapsedTime time){
-        return super.condicaoParadaGeral(target,50,condicaoParadaVertical(target,time));
+    private boolean limiteAltura(){
+        return motor.getCurrentPosition() > alturaMaxima;
     }
 
+    @Override
+    public boolean condicaoParadaFinal(){
+        if(super.chegouAlvoPID(30)) return true;
+
+        if(limiteAltura()) return true;
+
+        if(limiteCorrete()) return true;
 
 
-
-
-
-
-
+        return false;
+    }
 }

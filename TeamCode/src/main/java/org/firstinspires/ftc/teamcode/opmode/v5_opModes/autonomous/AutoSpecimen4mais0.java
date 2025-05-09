@@ -59,7 +59,7 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
         robot.md.pose = initialPose;
         Actions.runBlocking(
                 new SequentialAction(
-                        robot.outtakeIntakeSuperior.garraSuperior.fecharGarra(),
+                        //robot.outtakeIntakeSuperior.garraSuperior.fecharGarra(),
                         robot.md.actionBuilder(robot.md.pose).waitSeconds(1).build(),
                         robot.outtakeIntakeSuperior.braco.goToInital(),
                         new InstantAction(() -> robot.outtakeIntakeSuperior.braco.bracoGarraSuperiorServo.setPosition(0.209)),
@@ -80,7 +80,7 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
                         deposit(),
                         new ParallelAction(
                                 new SequentialAction(
-                                        robot.outtakeIntakeSuperior.garraSuperior.abrirGarra(),
+                                        //robot.outtakeIntakeSuperior.garraSuperior.abrirGarra(),
                                         robot.md.actionBuilder(robot.md.pose).waitSeconds(0.4).build(),
                                         positionIntake()
                                 ),
@@ -255,8 +255,8 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
                         )
                 ),
 
-                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.25).build(),
-                robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
+                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.25).build()
+                //robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
         );
 
     }
@@ -272,8 +272,8 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
                         )
                 ),
 
-                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.25).build(),
-                robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
+                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.25).build()
+               // robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
         );
 
     }
@@ -294,7 +294,7 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
                                 .setTangent(Math.toRadians(-90))
                                 .splineToLinearHeading(new Pose2d(51, -55, Math.toRadians(-90)), Math.toRadians(-90))
                                 //.waitSeconds(0.4)
-                                .lineToY(posIntake,null, new ProfileAccelConstraint(-velIntake, velIntake))
+                                //.lineToY(posIntake,null, new ProfileAccelConstraint(-velIntake, velIntake))
                                 .build()
                 ),
                 robot.md.actionBuilder(robot.md.pose).waitSeconds(0.30).build()
@@ -305,7 +305,7 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
 
     public  Action positionIntake() {
         return new ParallelAction(
-                robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()                                                                                                                                                                                                           ,
+                //robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()                                                                                                                                                                                                           ,
                 robot.outtakeIntakeSuperior.braco.goToIntakeCHAMBER(),
                 robot.outtakeIntakeSuperior.garraSuperior.goToIntakeSpecimen(),
                 robot.outtakeIntakeSuperior.linearVertical.ElevadorGoTo(-100)
@@ -315,7 +315,7 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
     }
     public Action collect() {
         return new SequentialAction(
-                robot.outtakeIntakeSuperior.garraSuperior.fecharGarra(),
+                //obot.outtakeIntakeSuperior.garraSuperior.fecharGarra(),
                 robot.md.actionBuilder(robot.md.pose).waitSeconds(0.45).build()
         );
     }
@@ -337,8 +337,8 @@ public class AutoSpecimen4mais0 extends LinearOpMode {
                         )
 
                 ),
-                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.6).build(),
-                robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
+                robot.md.actionBuilder(robot.md.pose).waitSeconds(0.6).build()
+                //robot.outtakeIntakeSuperior.garraSuperior.abrirGarra()
         );
     }
     public Action sample2() {

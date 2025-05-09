@@ -8,70 +8,52 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes.CondicoesGeral;
+import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes.Condicoes;
 
 public class SistemaLinear  {
 
     public DcMotorEx motor;
     public Controladorpidf controlador;
-    public CondicoesGeral condicoesParada;
-    private int ID;/*todo : não usado*/
+    public Condicoes condicoesParada;
+    private int ID;
     public static boolean isBusy;
-
-    int position,targetPosition;
-
-
-
-    public SistemaLinear(
-        //DcMotorEx Motor,
-        //Controladorpidf controlador,
-        //CondicoesGeral parada
-    ){
-        //this.motor = Motor;
-        //this.position = motor.getCurrentPosition();
-        //this.targetPosition = this.position;
-        //this.parada = parada;
-        //this.controlador = controlador;
-    }
-
-
-
+    int targetPosition;
+    public SistemaLinear(){}
     public Action GoTo(int target) {
 
         return new Action() {
             int id = target;
-            ElapsedTime time = new ElapsedTime();
-            boolean started = false;
-            int topo = 2650;
+            boolean started = false , condicaoParadaId = false;
 
             @Override
             public boolean run(@NonNull TelemetryPacket telemetryPacket) {
                 if(!started) {
                     targetPosition = target;
-                    time.reset();
+                    condicoesParada.time.reset();
                     started = true;
                     ID = id;
                     isBusy = true;
-
                 }
+                if(ID != id) {
+                    reset(motor);
+                    isBusy = false;
+                    return false;
+                };
                 controlador.PIDF();
-                if(condicoesParada.) return ;
-                //PIDF();
 
-
-
+                if(condicoesParada.condicaoParadaFinal()){
+                    reset(motor);
+                    isBusy = false;
+                    return false;
+                }
                 return true;
             }
-
         };
-
     }
-
     public void reset(DcMotorEx Motor) {
         Motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         targetPosition = 0;
         Motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
-
 
 }
