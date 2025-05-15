@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.robot.Controller;
+package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao;
 
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;

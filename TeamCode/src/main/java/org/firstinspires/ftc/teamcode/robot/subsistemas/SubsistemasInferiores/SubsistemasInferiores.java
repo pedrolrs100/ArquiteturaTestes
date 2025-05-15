@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.robot.V5;
 import org.firstinspires.ftc.teamcode.robot.V5Modes;
 import org.firstinspires.ftc.teamcode.opmode.v5_opModes.autonomous.AutSample0mais4Red;
 import org.firstinspires.ftc.teamcode.common.roadrunner.MecanumDrive;
-import org.firstinspires.ftc.teamcode.robot.Controller.OrdersManager;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.OrdersManager;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.Garra.GarraInferior;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.Horizontal.LinearHorizontalMotor;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.Sugar.AlcapaoStates;

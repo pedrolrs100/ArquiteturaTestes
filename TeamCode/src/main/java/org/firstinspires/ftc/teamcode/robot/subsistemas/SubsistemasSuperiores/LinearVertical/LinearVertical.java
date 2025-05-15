@@ -15,10 +15,11 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 import org.firstinspires.ftc.teamcode.HardwareNames;
-import org.firstinspires.ftc.teamcode.common.PIDTargetChecker;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.PIDTargetChecker;
 
 import java.util.HashMap;
 @Config
+@Deprecated
 public class LinearVertical {
 
 

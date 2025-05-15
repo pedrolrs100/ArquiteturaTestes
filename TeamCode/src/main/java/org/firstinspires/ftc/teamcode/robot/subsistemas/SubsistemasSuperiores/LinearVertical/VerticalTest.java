@@ -8,10 +8,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.HardwareNames;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes.Condicoes;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes.CondicoesParadaVertical;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Controladorpidf;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.SistemaLinear;
+import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.Controladorpidf;
+import org.firstinspires.ftc.teamcode.robot.Controller.SistemaLinear;
 
 public class VerticalTest extends SistemaLinear  {
 

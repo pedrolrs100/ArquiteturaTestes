@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.common;
+package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao;
 
 import com.qualcomm.robotcore.util.ElapsedTime;
 

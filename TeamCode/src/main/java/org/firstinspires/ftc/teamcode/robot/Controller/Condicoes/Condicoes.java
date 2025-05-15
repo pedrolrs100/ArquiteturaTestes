@@ -1,10 +1,9 @@
-package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes;
+package org.firstinspires.ftc.teamcode.robot.Controller.Condicoes;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.SistemaLinear;
+import org.firstinspires.ftc.teamcode.robot.Controller.SistemaLinear;
 
 /**
  * Classe Base para passar todas as condições de parada de parada para o {@link SistemaLinear},
@@ -13,7 +12,7 @@ import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.Li
  */
 @SuppressWarnings("unused")
 public class Condicoes {
-    DcMotorEx motor;
+    public DcMotorEx motor;
     int alvo;
     public ElapsedTime time;
 

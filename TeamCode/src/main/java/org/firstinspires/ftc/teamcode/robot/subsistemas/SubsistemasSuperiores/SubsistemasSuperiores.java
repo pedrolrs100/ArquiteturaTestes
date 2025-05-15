@@ -16,15 +16,15 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 import org.firstinspires.ftc.teamcode.robot.V5;
 import org.firstinspires.ftc.teamcode.common.roadrunner.MecanumDrive;
-import org.firstinspires.ftc.teamcode.robot.Controller.OrdersManager;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.OrdersManager;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.BracoGarra.BracoGarraSuperior;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.BracoGarra.BracoGarraSuperiorStates;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.Garra.GarraSuperior;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.LinearVertical;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.UnderGrounSubystemStates;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.common.Garra.GarraAngulationStates;
-import org.firstinspires.ftc.teamcode.robot.subsistemas.common.Garra.GarraOpeningStates;
 
+
+@Deprecated
 public class SubsistemasSuperiores {
 
         public Telemetry telemetry;
@@ -73,7 +73,7 @@ public class SubsistemasSuperiores {
         public void goToInitial(OrdersManager carteiro , double runtime){
             carteiro.addOrder(braco.goToInital(),0.0,"braco superior",runtime);
             carteiro.addOrder(garraSuperior.goToIntakeSpecimen(),0.0,"garra superior",runtime);
-            carteiro.addOrder(garraSuperior.abrirGarra(),0.0,"Abrir",runtime);
+            //carteiro.addOrder(garraSuperior.abrirGarra(),0.0,"Abrir",runtime);
             carteiro.addOrder(linearVertical.ElevadorGoTo(-200),0.0,"linear vertical",runtime);
 
         }

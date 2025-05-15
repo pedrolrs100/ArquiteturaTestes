@@ -18,7 +18,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.teamcode.robot.Controller.OrdersManager;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.OrdersManager;
 import org.firstinspires.ftc.teamcode.robot.V5;
 import org.firstinspires.ftc.teamcode.robot.V5Modes;
 import org.firstinspires.ftc.teamcode.common.ControlHubServer;

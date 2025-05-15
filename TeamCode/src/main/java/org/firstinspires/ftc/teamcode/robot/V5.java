@@ -13,14 +13,14 @@ import com.qualcomm.hardware.lynx.LynxModule;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.teamcode.robot.Controller.Controladora;
-import org.firstinspires.ftc.teamcode.robot.Controller.Controladora5mais0_sugando;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.Controladora;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.Controladora5mais0_sugando;
 import org.firstinspires.ftc.teamcode.robot.Sensors.Vision.Limelight;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.LinearVertical;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.SubsistemasInferiores;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.SubsistemasSuperiores;
 import org.firstinspires.ftc.teamcode.common.roadrunner.MecanumDrive;
-import org.firstinspires.ftc.teamcode.robot.Controller.OrdersManager;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.OrdersManager;
 
 import java.util.ArrayList;
 import java.util.List;

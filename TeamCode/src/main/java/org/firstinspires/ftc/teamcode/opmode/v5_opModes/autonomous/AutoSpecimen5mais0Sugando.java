@@ -16,7 +16,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.robot.Controller.Controladora5mais0_sugando;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao.Controladora5mais0_sugando;
 import org.firstinspires.ftc.teamcode.robot.V5;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.UnderGrounSubystemStates;
 import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.UpperSubsystemStates;

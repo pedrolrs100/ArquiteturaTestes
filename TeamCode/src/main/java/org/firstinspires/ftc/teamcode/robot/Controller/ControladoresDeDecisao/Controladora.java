@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.robot.Controller;
+package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDeDecisao;
 
 import static org.firstinspires.ftc.teamcode.opmode.v5_opModes.autonomous.AutSample0mais4Red.Hdeposit1;
 import static org.firstinspires.ftc.teamcode.opmode.v5_opModes.autonomous.AutSample0mais4Red.XCollect2;

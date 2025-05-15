@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares;
+package org.firstinspires.ftc.teamcode.robot.Controller;
 
 import androidx.annotation.NonNull;
 
@@ -6,9 +6,9 @@ import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.acmerobotics.roadrunner.Action;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical.SistemasLineares.Condicoes.Condicoes;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.Controladorpidf;
+import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
 
 public class SistemaLinear  {
 
