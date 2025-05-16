@@ -23,6 +23,7 @@ import org.firstinspires.ftc.teamcode.robot.Sensors.SensorToque;
 
 //@Photon
 @Config
+@Deprecated
 public class LinearHorizontalMotor {
     public ElapsedTime tempoIndoAteOsetPoint = new ElapsedTime();
     public DcMotorEx motorHorizontal;

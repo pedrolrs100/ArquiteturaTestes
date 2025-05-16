@@ -1,27 +1,29 @@
-package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.LinearVertical;
+package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.Horizontal;
+
+import static org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasInferiores.Horizontal.LinearHorizontalMotor.limiarDistance;
 
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
+import org.firstinspires.ftc.teamcode.robot.Sensors.SensorCor;
 
-public class CondicoesParadaVertical extends Condicoes {
+public class CondicoesHorizontal extends Condicoes {
 
-
+    public SensorCor colorSensor;
     public double correnteLimite;
-    public int alturaMaxima;
-
-    public CondicoesParadaVertical(
+    public int extensaoMaxima;
+    public CondicoesHorizontal(
             DcMotorEx motor,
             int alvo,
             ElapsedTime time,
             double correnteLimite,
-            int alturaMaxima
+            int extensaoMaxima
     ){
-        super(motor,alvo,time);
+        super(motor, alvo, time);
         this.correnteLimite = correnteLimite;
-        this.alturaMaxima = alturaMaxima;
+        this.extensaoMaxima = extensaoMaxima;
     }
     private boolean limiteCorrete(){
         boolean condicaoParadaSurtoEnergia = (motor.getCurrent(CurrentUnit.AMPS) >= correnteLimite);
@@ -31,17 +33,26 @@ public class CondicoesParadaVertical extends Condicoes {
         }
         return false;
     }
-    private boolean limiteAltura(){
-        return motor.getCurrentPosition() > alturaMaxima;
+
+    private boolean limiteExtensao(){
+        return motor.getCurrentPosition() > extensaoMaxima;
+    }
+
+    private boolean sensorIsDetectingHorintontal() {
+        boolean condition = false;
+        condition = colorSensor.getDistance() < limiarDistance;
+        return  condition;
     }
 
     @Override
     public boolean condicaoParadaFinal(){
         if(super.chegouAlvoPID(30)) return true;
 
-        if(limiteAltura()) return true;
+        if(limiteExtensao()) return true;
 
         if(limiteCorrete()) return true;
+
+        if(sensorIsDetectingHorintontal()) return  true;
 
 
         return false;

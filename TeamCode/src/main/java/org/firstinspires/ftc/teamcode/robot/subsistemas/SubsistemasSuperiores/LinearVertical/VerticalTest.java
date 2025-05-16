@@ -28,8 +28,9 @@ public class VerticalTest extends SistemaLinear  {
         this.motorR =  hardwareMap.get(DcMotorEx.class, HardwareNames.verticalR);
         Controladorpidf controladorpidf = new Controladorpidf(motorR,0.1,0,0.0008,0.005);
         Condicoes condicoes = new CondicoesParadaVertical(motorR,targetPosition,time,correnteLimite,alturaMaxima);
-        super.motor = motorR;
-        super.controlador = controladorpidf;
+        this.motor = motorR;
+        this.controlador = controladorpidf;
+        this.condicoesParada = condicoes;
         //super.parada = condicoes;
 
 
@@ -42,10 +43,10 @@ public class VerticalTest extends SistemaLinear  {
         this.motorL.setDirection(DcMotorSimple.Direction.REVERSE);
 
     }
-    public Action ElevadorGoTo(){
+    public Action ElevadorGoTo(int target){
         motorL.setPower(controlador.PIDF());
         motorR.setPower(controlador.PIDF());
-        return super.GoTo(100);
+        return super.GoTo(target);
     }
 
 
