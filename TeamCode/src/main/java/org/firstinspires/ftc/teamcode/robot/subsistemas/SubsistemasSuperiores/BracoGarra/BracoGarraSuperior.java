@@ -17,6 +17,7 @@ import org.firstinspires.ftc.teamcode.HardwareNames;
 import java.util.HashMap;
 
 @Config
+@Deprecated
 public class BracoGarraSuperior {
     int ID = 0;
     boolean isBusy = false;

@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.robot.subsistemas.SubsistemasSuperiores.BracoGarra;
 
+@Deprecated
 public enum BracoGarraSuperiorStates {
         BASKET,
         READYTO_TRANSFER,
