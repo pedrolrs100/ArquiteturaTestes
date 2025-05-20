@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.HardwareNames;
 import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
-import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.Controladorpidf;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.ControladorPIDF;
 import org.firstinspires.ftc.teamcode.robot.Controller.SistemaLinear;
 
 public class VerticalTest extends SistemaLinear  {
@@ -26,7 +26,7 @@ public class VerticalTest extends SistemaLinear  {
 
         this.motorL =  hardwareMap.get(DcMotorEx.class, HardwareNames.verticalL);
         this.motorR =  hardwareMap.get(DcMotorEx.class, HardwareNames.verticalR);
-        Controladorpidf controladorpidf = new Controladorpidf(motorR,0.1,0,0.0008,0.005);
+        ControladorPIDF controladorpidf = new ControladorPIDF(motorR,0.1,0,0.0008,0.005);
         Condicoes condicoes = new CondicoesParadaVertical(motorR,targetPosition,time,correnteLimite,alturaMaxima);
         this.motor = motorR;
         this.controlador = controladorpidf;

@@ -31,6 +31,7 @@ public class CondicoesParadaVertical extends Condicoes {
         }
         return false;
     }
+
     private boolean limiteAltura(){
         return motor.getCurrentPosition() > alturaMaxima;
     }

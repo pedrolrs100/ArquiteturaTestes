@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
-import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.Controladorpidf;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.ControladorPIDF;
 import org.firstinspires.ftc.teamcode.robot.Controller.SistemaLinear;
 
 public class HorizontalTest extends SistemaLinear {
@@ -22,7 +22,7 @@ public class HorizontalTest extends SistemaLinear {
     public  HorizontalTest(HardwareMap hardwareMap){
 
         motorH = hardwareMap.get(DcMotorEx.class ,"3");
-        Controladorpidf controladorpidf = new Controladorpidf(motorH,1.4,0,0,0);
+        ControladorPIDF controladorpidf = new ControladorPIDF(motorH,1.4,0,0,0);
         Condicoes condicoes = new CondicoesHorizontal(motorH,targetPosition,time,correnteLimite,extensaoMaxima);
         this.controlador = controladorpidf;
         this.motor = motorH;

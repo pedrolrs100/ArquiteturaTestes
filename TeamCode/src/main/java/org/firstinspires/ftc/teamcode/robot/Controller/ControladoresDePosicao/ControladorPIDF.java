@@ -4,12 +4,12 @@ package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao;
 import com.arcrobotics.ftclib.controller.PIDController;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-public class Controladorpidf {
+public class ControladorPIDF {
     PIDController controller;
     double p,i,d,f;
     int targetPosition;
     DcMotorEx motor;
-    public Controladorpidf
+    public ControladorPIDF
     (
         DcMotorEx motor,
         double P ,

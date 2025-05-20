@@ -7,13 +7,13 @@ import com.acmerobotics.roadrunner.Action;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.Controladorpidf;
+import org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao.ControladorPIDF;
 import org.firstinspires.ftc.teamcode.robot.Controller.Condicoes.Condicoes;
 
 public class SistemaLinear  {
 
     public DcMotorEx motor;
-    public Controladorpidf controlador;
+    public ControladorPIDF controlador;
     public Condicoes condicoesParada;
     private int ID;
     public static boolean isBusy;

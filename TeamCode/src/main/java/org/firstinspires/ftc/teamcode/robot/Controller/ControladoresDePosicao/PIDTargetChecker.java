@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao;
 
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+@Deprecated
 public class PIDTargetChecker {
     private double errorTolerance; // Margem de tolerância para o erro
     private double stabilityTime; // Tempo necessário para considerar o sistema estável

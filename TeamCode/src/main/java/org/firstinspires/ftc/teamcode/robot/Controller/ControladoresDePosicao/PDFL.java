@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.robot.Controller.ControladoresDePosicao;
 
+@Deprecated
 public class PDFL {
 
     private  double kP, kD, kF, kL;
