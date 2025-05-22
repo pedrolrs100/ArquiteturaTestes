@@ -43,10 +43,17 @@ public class VerticalTest extends SistemaLinear  {
         this.motorL.setDirection(DcMotorSimple.Direction.REVERSE);
 
     }
+
+
+
     public Action ElevadorGoTo(int target){
         motorL.setPower(controlador.PIDF());
         motorR.setPower(controlador.PIDF());
         return super.GoTo(target);
+    }
+
+    public Action goToLowChamber() {
+        return ElevadorGoTo(90);
     }
 
 
